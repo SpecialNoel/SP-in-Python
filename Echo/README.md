@@ -36,5 +36,5 @@ Functionalities are not fully done yet. Specifically:
 1. Both input in client side program and output in server side program are hard-coded.
 2. The server socket will close once it receives an empty byte object (b'') from any of the connected client sockets.
 3. The server side program will be terminated immediately after any of the connected client sockets closes.
-
+4. There can be only one client since both the first client and the server socket close and their programs terminate after their works are done.
 
