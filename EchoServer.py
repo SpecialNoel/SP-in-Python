@@ -15,12 +15,12 @@ port = 65432
 # socket.SOCK_STREAM means that the protocol used is TCP (Transmission Control Protocol)
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as serverSocket:
     print('Server socket created')
-    # bind() allows the serverSocket to have host and port as its ip address and port number
+    # .bind() allows the serverSocket to have host and port as its ip address and port number
     serverSocket.bind((host, port))
-    # listen() enables the serverSocket to be connected with client sockets
+    # .listen() enables the serverSocket to be connected with client sockets
     serverSocket.listen()
     print('Waiting for connection established by client socket')
-    # accept() allows the serverSocket to accept the connection initiated by a client socket
+    # .accept() allows the serverSocket to accept the connection initiated by a client socket
     # conn is a new socket object (a sub socket created by the serverSocket), 
     #   which can be used to send and receive data, to or from the connected client socket
     # address is the address bound to the connected client socket
