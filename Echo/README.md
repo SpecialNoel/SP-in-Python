@@ -1,5 +1,4 @@
 # Echo
-The Echo folder contains two files, ```EchoServer.py``` and ```EchoClient.py```.
 
 ## How to Run the programs
 *Note: To execute programs in this folder, make sure you have Python version 3 or higher installed.
