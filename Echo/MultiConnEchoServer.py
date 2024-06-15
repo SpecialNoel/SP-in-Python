@@ -16,7 +16,7 @@ def accept(serverSocket, selector):
     #   which can be used to send and receive data, to or from the connected client socket
     # For each client socket accepted, there will be one corresponding conn to be connected with it
     conn, address = serverSocket.accept()
-    print(f"\nServer accepts connection from {address}")
+    print(f'\nServer accepts connection from {address}')
 
     # setblocking(False) to conn will set it to non-blocking state
     # Reason to do so: if conn blocks, then the entire server is stalled until it returns. 
@@ -28,7 +28,7 @@ def accept(serverSocket, selector):
     # data is the object that holds the data info we want to be included along with the socket
     # Therefore, for every newly connected (accepted) client socket, there will be a corresponding data object
     # each data is initialized with the client socket's address, an empty binary input variable and an empty binary output variable
-    data = types.SimpleNamespace(addr=address, inb=b"", outb=b"")
+    data = types.SimpleNamespace(addr=address, inb=b'', outb=b'')
 
     # events should be selectors.EVENT_READ OR selectors.EVENT_WRITE 
     #   since we want to know when the client connection is ready for readinig and writing
@@ -59,7 +59,7 @@ def serve(key, mask, selector):
             # If there are no data received, it means that the client socket wants to close the connection with conn
             selector.unregister(socket)
             socket.close()
-            print(f"\nServer closes connection to {data.addr}")
+            print(f'\nServer closes connection to {data.addr}')
 
     # Handle writing event if the socket is ready for writing
     if mask & selectors.EVENT_WRITE:
@@ -68,7 +68,7 @@ def serve(key, mask, selector):
             # The .send() method returns the number of bytes sent. 
             # This number can then be used with slice notation on the .outb buffer to discard the bytes sent.
             sent = socket.send(data.outb)
-            print(f"\nServer echos message: {data.outb!r} to {data.addr}")
+            print(f'\nServer echos message: {data.outb!r} to {data.addr}')
             
             # After sending the stored data to the client socket, clear the buffer by removing sent bytes
             data.outb = data.outb[sent:]
@@ -77,7 +77,7 @@ def serve(key, mask, selector):
 def setup_serverSocket():
     # This ensures that this program will be ran with appropriate commands accompanied
     if len(sys.argv) != 3:
-        print(f"Wrong command format. Usage: {sys.argv[0]} <host> <port>")
+        print(f'Wrong command format. Usage: {sys.argv[0]} <host> <port>')
         sys.exit(1)
 
     # Server IP address and port number will be parsed from inputed commands
@@ -89,7 +89,7 @@ def setup_serverSocket():
 
     # Make serverSocket start listening to connections (not yet accept any, just open for connection)
     serverSocket.listen()
-    print(f"Server listens on {(host, port)}")
+    print(f'Server listens on {(host, port)}')
 
     # When setblocking(False) is used with selector.select(), it will wait for events on one or more sockets,
     #   and then read and write data when it's ready
@@ -128,7 +128,7 @@ def start_listen_connections(selector):
                     serve(key, mask, selector)
     except KeyboardInterrupt:
         # Encountering user input [ctrl+c], thus breaking from the infinite loop of serving client sockets
-        print("Caught user keyboard interrupt, exiting")
+        print('Caught user keyboard interrupt, exiting')
     finally:
         # Upon encountering user keyboard interrupt, closes the selector and exits the program
         selector.close()

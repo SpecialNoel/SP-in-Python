@@ -18,7 +18,7 @@ def start_connections(host, port, num_conns, selector, messages):
     for i in range(0, num_conns):
         # Give this client socket an id for identification
         connid = i + 1
-        print(f"\nClient establishes connection {connid} to {server_addr}")
+        print(f'\nClient establishes connection {connid} to {server_addr}')
 
         # socket.AF_INET means that it has a host with an IPv4 address, and a port number which is an integer
         # socket.SOCK_STREAM means that the protocol used is TCP (Transmission Control Protocol)
@@ -68,7 +68,7 @@ def serve(key, mask, selector):
             # Client side keeps track of the number of bytes it received from the server so that it can close its side of the connection
             # When the server detects this, it closes its side of the connection too
             data.recv_total += len(recv_data)
-            print(f"\nClient receives message: {recv_data!r} from connection {data.connid}")
+            print(f'\nClient receives message: {recv_data!r} from connection {data.connid}')
 
         # If there are no data received, it means that the server side wants to close the connection with this client socket
         if not recv_data or (data.recv_total == data.msg_total):
@@ -77,7 +77,7 @@ def serve(key, mask, selector):
 
             # After unregistering, close this client socket (thus the connection with the server socket is fully closed)
             socket.close()
-            print(f"\nClient closes connection to {data.connid}")
+            print(f'\nClient closes connection to {data.connid}')
 
     # Handle writing event if the socket is ready for writing
     if mask & selectors.EVENT_WRITE:
@@ -89,7 +89,7 @@ def serve(key, mask, selector):
             # The .send() method returns the number of bytes sent. 
             # This number can then be used with slice notation on the .outb buffer to discard the bytes sent.
             sent = socket.send(data.outb)  # Should be ready to write to the server socket
-            print(f"\nClient sends message: {data.outb!r} to connection {data.connid}")
+            print(f'\nClient sends message: {data.outb!r} to connection {data.connid}')
 
             # After sending the stored data to the server socket, remove the sent bytes from the send buffer
             data.outb = data.outb[sent:]
@@ -113,21 +113,22 @@ def start_serving_connection(selector):
             if not selector.get_map():
                 break
     except KeyboardInterrupt:
-        print("Caught keyboard interrupt, exiting")
+        print('Caught keyboard interrupt, exiting')
     finally:
         selector.close()
 
 if __name__ == '__main__':
     # This ensures that this program will be ran with appropriate commands accompanied
     if len(sys.argv) != 4:
-        print(f"Wrong command format. Usage: {sys.argv[0]} <host> <port> <num_connections>")
+        print(f'Wrong command format. Usage: {sys.argv[0]} <host> <port> <num_connections>')
         sys.exit(1)
 
     # Client IP address and port number will be parsed from inputed commands
     host, port, num_conns = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
     # Two binary messages used for testing in client's side program
-    messages = [b"Message 1, sent by client. ", 
-                b"Message 2, sent by client. "]
+
+    messages = [b"Message 1, sent by client. ", b"Message 2, sent by client. "]
+    #messages = [b'', b'']
 
     # Introduce selector to handle multiple connection simultaneously
     selector = selectors.DefaultSelector()
