@@ -3,6 +3,7 @@
 
 ## Version 1.0.0
 Echo version 1.0.0 contains two files: ```EchoServer.py``` and ```EchoClient.py```.
+
 ## How to Run programs in Version 1.0.0
 
 Step 1: Open two new terminals.
@@ -32,8 +33,8 @@ and repeat the process to start the client program on each of the new terminals.
 python3  EchoClient.py
 ```
 
-Functionalities are not fully done yet. Specifically:
-1. Both input in client side program and output in server side program are hard-coded.
+Desired functionalities are not fully implemented yet. Specifically:
+1. Inputs (IP addresses and port numbers for both programs) and output (b'Hello, world', stated in ```EchoClient.py```) are hard-coded.
 2. The server socket will close once it receives an empty byte object (b'') from any of the connected client sockets.
 3. The server side program will be terminated immediately after any of the connected client sockets closes.
 4. There can be only one client since both the first client and the server socket close and their programs terminate after their works are done.
