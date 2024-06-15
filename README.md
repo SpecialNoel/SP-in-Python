@@ -4,4 +4,4 @@ A repository made for myself to better understand concepts of sockets in terms o
 
 Any code-related sections will be written in Python.
 
-Credit: https://realpython.com/python-sockets/
+Credit for Echo: https://realpython.com/python-sockets/
