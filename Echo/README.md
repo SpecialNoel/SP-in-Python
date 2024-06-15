@@ -1,5 +1,5 @@
 # Echo
-_Echo is a Client-Server architecture, where client sends string/binary input to server, and server reports back to client what it received._
+_Echo is a Client-Server architecture, where client sends binary input to server, and server reports back to client what it received._
 
 **Note**: To execute programs in this folder, make sure you have Python version 3.6 or higher installed.
 
