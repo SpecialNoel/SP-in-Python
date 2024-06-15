@@ -1,7 +1,9 @@
 # Echo
+*Note: To execute programs in this folder, make sure you have Python version 3.6 or higher installed.
 
-## How to Run the programs
-*Note: To execute programs in this folder, make sure you have Python version 3 or higher installed.
+## Version 1.0.0
+Echo version 1.0.0 contains two files: ```EchoServer.py``` and ```EchoClient.py```.
+## How to Run programs in Version 1.0.0
 
 Step 1: Open two new terminals.
 
@@ -15,7 +17,7 @@ Step 3: Start the client side program by typing in the following commands on the
 python3  EchoClient.py
 ```
 
-Step 4: Check the terminals to see the outputs. It should act exactly like what the ```echo``` does, that output shown on the terminal will be the same as user input.
+Step 4: Check the terminals to see the outputs. It should act like what the ```echo``` does, that output shown on the terminal will be the same as user input.
 
 Notice 1: the server side program has to be executed before the client side program because the server socket created in the server side program will first need to call the 
 socket methdo ```listen()``` to enable the server socket be connected with other client sockets. Thus, having the client side program executed first will lead to 
@@ -30,7 +32,6 @@ and repeat the process to start the client program on each of the new terminals.
 python3  EchoClient.py
 ```
 
-## Version 1.0.0
 Functionalities are not fully done yet. Specifically:
 1. Both input in client side program and output in server side program are hard-coded.
 2. The server socket will close once it receives an empty byte object (b'') from any of the connected client sockets.
