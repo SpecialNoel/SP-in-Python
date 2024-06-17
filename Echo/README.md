@@ -12,6 +12,11 @@ and repeat the process to start client program on each of the new terminals.
 
 <br/><br/>
 
+## Version 1.2.0
+
+<br/><br/>
+
+
 ## Version 1.1.0
 Echo version 1.1.0 contains two files: ```MultiConnEchoServer.py``` and ```MultiConnEchoClient.py```.
 
