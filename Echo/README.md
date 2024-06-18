@@ -1,5 +1,5 @@
 # Echo
-_Echo is a Client-Server architecture, where client sends string/binary input to server, and server reports back to client what it received._
+_Echo is a Client-Server architecture, where client sends binary input to server, and server reports back to client what it received._
 
 **Note**: To execute programs in this folder, make sure you have Python version 3.6 or higher installed.
 
@@ -11,6 +11,11 @@ There can be as many client programs running concurrently, however. To create an
 and repeat the process to start client program on each of the new terminals.
 
 <br/><br/>
+
+## Version 1.2.0
+
+<br/><br/>
+
 
 ## Version 1.1.0
 Echo version 1.1.0 contains two files: ```MultiConnEchoServer.py``` and ```MultiConnEchoClient.py```.
