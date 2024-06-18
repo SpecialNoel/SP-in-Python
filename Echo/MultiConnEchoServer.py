@@ -98,7 +98,7 @@ def setup_serverSocket():
 
 # Setup the selector for serverSocket
 def setup_selector(serverSocket):
-    # Introduce selector to handle multiple connection simultaneously
+    # Introduce selectors module to handle multiple connection simultaneously using only a single execution thread
     selector = selectors.DefaultSelector()
 
     # .register() registers serverSocket to be monitored with selector.select()
