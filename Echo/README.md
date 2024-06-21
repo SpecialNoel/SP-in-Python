@@ -25,7 +25,7 @@ Echo version 1.1.0 contains two files: ```MultiConnEchoServer.py``` and ```Multi
 
 **Step 2**: Start the server program by typing in the following commands on one of the terminals: 
 ```
-python3 MultiConnEchoServer.py *server_ip_address* *server_port_number*
+python3 MultiConnEchoServer.py <server_ip_address> <server_port_number>
 ```
 Example command for starting server program:
 ```
@@ -34,7 +34,7 @@ python3 MultiConnEchoServer.py 127.0.0.1 65432
 
 **Step 3**: Start the client program by typing in the following commands on the other terminal:
 ```
-python3 MultiConnEchoClient.py *server_ip_address* *server_port_number* *number_of_clients*
+python3 MultiConnEchoClient.py <server_ip_address> <server_port_number> <number_of_clients>
 ```
 Example command for starting client program:
 ```
@@ -47,7 +47,7 @@ python3 MultiConnEchoClient.py 127.0.0.1 65432 2
 
 **Step 6**: Client program is terminated (finished), while server program remaining opening. While server is still up, you can create more client sockets and connect them with the same server socket by running client program again with the same commands:
 ```
-python3 MultiConnEchoClient.py *server_IP_address* *server_port_number* *number_of_clients*
+python3 MultiConnEchoClient.py <server_IP_address> <server_port_number> <number_of_clients>
 ```
 
 ## Fixed bugs in Version 1.1.0, compared to Version 1.0.0:
