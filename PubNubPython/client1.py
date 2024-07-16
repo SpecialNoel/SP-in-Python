@@ -13,8 +13,8 @@ pnconfig = PNConfiguration()
 
 userId = os.path.basename(__file__)
 
-pnconfig.publish_key = 'pub-c-d3ac4ec7-ca28-44b5-8565-38a74218ee2a'
-pnconfig.subscribe_key = 'sub-c-2e3fa19f-6801-4de9-904a-a64b73c39e94'
+pnconfig.publish_key = 'pub'
+pnconfig.subscribe_key = 'sub'
 
 pnconfig.user_id = userId
 pnconfig.ssl = True
